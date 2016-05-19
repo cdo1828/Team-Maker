@@ -1,0 +1,16 @@
+<div>
+	<h2>NBA Rosters</h2>
+	<label>Select a Team: 
+		<select ng-model="search.team_id" ng-options="team.id as team.name for team in teams"></select>
+	</label>
+	<table class='table text-center' style='margin: 0 auto; max-width: 30%'>
+		<thead>
+			<th class='text-center'>Players</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | filter:search">
+				<td ng-bind="player.first_name + ' ' + player.last_name"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

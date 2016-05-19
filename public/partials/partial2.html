@@ -1,0 +1,30 @@
+<div>
+    <h2>NBA Teams</h2>
+    <label>Search: <input type="text" ng-model="search"></label>
+    
+        
+            <table class='table text-center' style='margin: 0 auto; max-width: 30%'>
+                <thead>
+                    <tr>
+                        <th class='text-center'>Team</th>
+                        <th class='text-center'>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat='team in teams | filter:search'>
+                        <td ng-bind='team.name'></td>
+                        <td><button class='btn-danger' ng-click='deleteTeam(team.id)'>Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        
+    
+</div>
+<div>
+    <h2>Add a new team</h2>
+    <p>
+        <label>Name:</label>
+        <input ng-model="newTeam.team.name" type="text">
+    </p>
+    <input class='btn-primary' ng-click="createTeam()" type="submit" value="Create Team">
+</div>
