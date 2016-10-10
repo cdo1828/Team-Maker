@@ -3,8 +3,7 @@ class CreatePlayers < ActiveRecord::Migration
     create_table :players do |t|
       t.string :first_name
       t.string :last_name
-      t.string :string
-
+      t.references :team
       t.timestamps null: false
     end
   end
